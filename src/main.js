@@ -9,7 +9,7 @@ import 'font-awesome/css/font-awesome.css';
 Bluebird.config({ warnings: { wForgottenReturn: false } });
 
 export function configure(aurelia) {
-  aurelia.use
+    aurelia.use
     .standardConfiguration()
     .feature(PLATFORM.moduleName('resources/index'));
 
@@ -20,13 +20,13 @@ export function configure(aurelia) {
   // Anyone wanting to use HTMLImports to load views, will need to install the following plugin.
   // aurelia.use.plugin(PLATFORM.moduleName('aurelia-html-import-template-loader'));
 
-  if (environment.debug) {
-    aurelia.use.developmentLogging();
-  }
+    if (environment.debug) {
+        aurelia.use.developmentLogging();
+    }
 
-  if (environment.testing) {
-    aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
-  }
+    if (environment.testing) {
+        aurelia.use.plugin(PLATFORM.moduleName('aurelia-testing'));
+    }
 
-  aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
+    aurelia.start().then(() => aurelia.setRoot(PLATFORM.moduleName('app')));
 }
