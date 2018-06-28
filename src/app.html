@@ -1,18 +1,13 @@
 <template>
   <require from="./styles.css"></require>
-  <require from="./contact-list"></require>
+  <require from="./staff"></require>
+  <require from="./report"></require>
 
   <nav class="navbar navbar-light bg-light fixed-top" role="navigation">
-    <a class="navbar-brand" href="#">
-      <i class="fa fa-user"></i>
-      <span>Contacts</span>
-    </a>
+    <ul class="nav nav-tabs">
+      <li><a href="#/report">report</a></li>
+      <li><a href="#/staff">staff</a></li>
+    </ul>
   </nav>
-
-  <div class="container">
-    <div class="row">
-      <contact-list class="col-md-4"></contact-list>
-      <router-view class="col-md-8"></router-view>
-    </div>
-  </div>
+  <router-view></router-view>
 </template>

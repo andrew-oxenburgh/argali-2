@@ -16,6 +16,23 @@ a:focus {
   margin: 20px;
 }
 
+.staff {
+  margin: 20px;
+}
+
+#staff-page {
+
+}
+
+.staff-list {
+
+  width: 20em;
+}
+
+.report {
+  margin: 20px;
+}
+
 .contact-list {
   overflow-y: auto;
   border: 1px solid #ddd;
