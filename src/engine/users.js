@@ -1,7 +1,11 @@
-const users = [
+const _users = [
     'andrew',
     'steven',
     'philip'
 ];
 
-export default {users: () => users};
+const users = function() {
+    return _users;
+}
+
+module.exports = {users: users}

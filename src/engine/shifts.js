@@ -5,7 +5,7 @@
 */
 const R = require('ramda');
 const debug = require('debug')('shifts');
-const users = require('./users');
+const users = require('./users')
 
 const RUNNING = 'SHIFTS.RUNNING';
 const COMPLETED = 'SHIFTS.COMPLETED';

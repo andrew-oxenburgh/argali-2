@@ -1,19 +1,24 @@
-import {difference, keys} from 'ramda'
-import $ from 'jquery'
+const {difference, keys} = require('ramda')
 
-import users from './engine/users'
-import shifts from './engine/shifts'
-
+const users = require('./engine/users')
+const shifts = require('./engine/shifts')
 
 export class Staff {
     attached() {
-        $('.list-group').sortable({connectWith: '.connectedSortable'}).disableSelection();
     }
 
     constructor() {
         const staff = users.users();
         this.working = keys(shifts.running());
         this.notWorking = difference(staff, this.working)
-        console.log('constructed')
+    }
+
+    makeWorking(user) {
+        alert('working ' + user);
+        shifts.start(user)
+    }
+
+    makeNotWorking(user) {
+        alert('not working ' + user);
     }
 }

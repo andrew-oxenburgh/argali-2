@@ -5,18 +5,14 @@
   <div class="row">
     <div class="staff-list">
       <h3>not working</h3>
-      <ul class="list-group connectedSortable">
-        <li repeat.for="user of notWorking" class="list-group-item">
-          <h4>${user}</h4>
-        </li>
+      <ul class="list-group not-working">
+        <li repeat.for="user of notWorking" class="list-group-item"><a href="#" class="staff-member" click.delegate="$parent.makeWorking(user)">${user}</a></li>
       </ul>
     </div>
     <div class="staff-list">
       <h3>working</h3>
-      <ul class="list-group connectedSortable">
-        <li repeat.for="user of working" class="list-group-item">
-          <h4>${user}</h4>
-        </li>
+      <ul class="list-group working">
+        <li repeat.for="user of working" class="list-group-item"><a href="#" class="staff-member" click.delegate="$parent.makeNotWorking(user)">${user}</a></li>
       </ul>
     </div>
   </div>
