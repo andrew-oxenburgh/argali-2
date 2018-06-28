@@ -1,8 +1,8 @@
 import {inject} from 'aurelia-framework';
 import {EventAggregator} from 'aurelia-event-aggregator';
-import {WebAPI} from './web-api';
-import {ContactUpdated, ContactViewed} from './messages';
-import {areEqual} from './utility';
+import {WebAPI} from '../web-api';
+import {ContactUpdated, ContactViewed} from '../messages';
+import {areEqual} from '../utility';
 
 @inject(WebAPI, EventAggregator)
 export class ContactDetail {

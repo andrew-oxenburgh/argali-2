@@ -1,8 +1,8 @@
 const {difference, keys} = require('ramda')
 const moment = require('moment')
 
-const users = require('./engine/users')
-const shifts = require('./engine/shifts')
+const users = require('../engine/users')
+const shifts = require('../engine/shifts')
 
 export class Staff {
     attached() {

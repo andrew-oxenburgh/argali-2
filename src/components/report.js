@@ -1,4 +1,4 @@
-const shifts = require('./engine/shifts')
+const shifts = require('../engine/shifts')
 import 'bootstrap/scss/bootstrap.scss'
 
 export class Report {
