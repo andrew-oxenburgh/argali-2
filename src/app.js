@@ -1,5 +1,6 @@
 import {PLATFORM} from 'aurelia-pal';
 import './styles.scss'
+import 'bootstrap/scss/bootstrap.scss'
 
 export class App {
     configureRouter(config, router) {

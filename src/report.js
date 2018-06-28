@@ -1,8 +1,8 @@
-import {debug} from 'debug';
+const shifts = require('./engine/shifts')
+import 'bootstrap/scss/bootstrap.scss'
 
 export class Report {
     constructor() {
-        this.message = 'Please Select a Contact.';
-        debug('here i am');
+        this.shifts = shifts.completed()
     }
 }
