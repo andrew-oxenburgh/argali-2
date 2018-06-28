@@ -40,9 +40,10 @@
     "fileExtension": ".html"
   },
   "cssProcessor": {
-    "id": "none",
-    "displayName": "None",
-    "fileExtension": ".css"
+    "id": "sass",
+    "displayName": "Sass",
+    "fileExtension": ".scss",
+    "source": "src/*.scss"
   },
   "editor": {
     "id": "vscode",
