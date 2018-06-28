@@ -1,6 +1,10 @@
 import {PLATFORM} from 'aurelia-pal';
-import '../styles.scss'
 import 'bootstrap/scss/bootstrap.scss'
+
+import '../styles.scss'
+const shifts = require('../engine/shifts')
+const shiftReports = require('../engine/shift-reports')
+
 
 export class App {
     configureRouter(config, router) {
@@ -13,5 +17,16 @@ export class App {
         ]);
 
         this.router = router;
+    }
+
+    shiftsEmail() {
+        const email = 'andrew.oxenburgh@gmail.com'
+        const subject = 'roster'
+        const emailBody = encodeURI(shiftReports.asCsv())
+        window.location = 'mailto:' + email + '?subject=' + subject + '&body=' +   emailBody
+    }
+
+    shiftsClear() {
+        shifts.clear()
     }
 }

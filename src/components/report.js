@@ -1,5 +1,6 @@
-const shifts = require('../engine/shifts')
 import 'bootstrap/scss/bootstrap.scss'
+
+const shifts = require('../engine/shifts')
 
 export class Report {
     constructor() {
