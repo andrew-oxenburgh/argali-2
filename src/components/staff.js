@@ -5,10 +5,14 @@ const users = require('../engine/users')
 const shifts = require('../engine/shifts')
 
 export class Staff {
+    constructor() {
+        this.calc()
+    }
+
     attached() {
     }
 
-    constructor() {
+    calc() {
         const staff = users.users();
         this.working = keys(shifts.running());
         this.notWorking = difference(staff, this.working)
@@ -16,17 +20,11 @@ export class Staff {
 
     makeWorking(user) {
         shifts.start({name: user, time: moment().format('YYYY-MM-DD HH:mm')})
-
-        const staff = users.users();
-        this.working = keys(shifts.running());
-        this.notWorking = difference(staff, this.working)
+        this.calc();
     }
 
     makeNotWorking(user) {
         shifts.end({name: user, time: moment().format('YYYY-MM-DD HH:mm')})
-
-        const staff = users.users();
-        this.working = keys(shifts.running());
-        this.notWorking = difference(staff, this.working)
+        this.calc()
     }
 }

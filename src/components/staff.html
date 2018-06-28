@@ -1,19 +1,23 @@
 <template>
-  <div class="text-center" id="staff-page">
-    <h2>staff</h2>
-  </div>
-  <div class="staff row">
-    <div class="staff-list">
-      <h3>not working</h3>
-      <ul class="list-group not-working" value.bind="working">
-        <li repeat.for="user of notWorking" class="list-group-item"><a href="#" class="staff-member" click.delegate="$parent.makeWorking(user)">${user}</a></li>
-      </ul>
+    <div class="text-center" id="staff-page">
+        <h2>staff</h2>
     </div>
-    <div class="staff-list">
-      <h3>working</h3>
-      <ul class="list-group working" value.bind="notWorking">
-        <li repeat.for="user of working" class="list-group-item"><a href="#" class="staff-member" click.delegate="$parent.makeNotWorking(user)">${user}</a></li>
-      </ul>
+    <div class="staff row">
+        <div class="staff-list">
+            <h3>not working</h3>
+            <ul class="list-group not-working" value.bind="notWorking">
+                <li repeat.for="user of notWorking" class="list-group-item"><a href="#" class="staff-member"
+                                                                               click.delegate="$parent.makeWorking(user)">${user}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="staff-list">
+            <h3>working</h3>
+            <ul class="list-group working" value.bind="working">
+                <li repeat.for="user of working" class="list-group-item"><a href="#" class="staff-member"
+                                                                            click.delegate="$parent.makeNotWorking(user)">${user}</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </template>

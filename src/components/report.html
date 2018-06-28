@@ -1,17 +1,17 @@
 <template>
-  <div class="report text-center">
-    <h2>report</h2>
-  </div>
-  <table value.bind="shifts" class="shifts-report-table">
-    <tr>
-      <th>name</th>
-      <th>start</th>
-      <th>end</th>
-    </tr>
-    <tr repeat.for="shift of shifts">
-      <td>${shift.name}</td>
-      <td>${shift.start}</td>
-      <td>${shift.end}</td>
-    </tr>
-  </table>
+    <div class="report text-center">
+        <h2>report</h2>
+    </div>
+    <table value.bind="shifts" class="shifts-report-table">
+        <tr>
+            <th>name</th>
+            <th>start</th>
+            <th>end</th>
+        </tr>
+        <tr repeat.for="shift of shifts">
+            <td>${shift.name}</td>
+            <td>${shift.start}</td>
+            <td>${shift.end}</td>
+        </tr>
+    </table>
 </template>
