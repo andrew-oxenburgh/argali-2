@@ -1,8 +1,8 @@
-let latency = 200;
-let id = 0;
+let latency = 200
+let id = 0
 
 function getId() {
-    return ++id;
+    return ++id
 }
 
 let contacts = [
@@ -41,13 +41,13 @@ let contacts = [
         email: 'green@inklings.com',
         phoneNumber: '867-5309'
     }
-];
+]
 
 export class WebAPI {
     isRequesting = false;
 
     getContactList() {
-        this.isRequesting = true;
+        this.isRequesting = true
         return new Promise(resolve => {
             setTimeout(() => {
                 let results = contacts.map(x =>  {
@@ -56,43 +56,43 @@ export class WebAPI {
                         firstName: x.firstName,
                         lastName: x.lastName,
                         email: x.email
-                    };
-                });
-                resolve(results);
-                this.isRequesting = false;
-            }, latency);
-        });
+                    }
+                })
+                resolve(results)
+                this.isRequesting = false
+            }, latency)
+        })
     }
 
     getContactDetails(id) {
-        this.isRequesting = true;
+        this.isRequesting = true
         return new Promise(resolve => {
             setTimeout(() => {
-                let found = contacts.filter(x => x.id == id)[0];
-                resolve(JSON.parse(JSON.stringify(found)));
-                this.isRequesting = false;
-            }, latency);
-        });
+                let found = contacts.filter(x => x.id == id)[0]
+                resolve(JSON.parse(JSON.stringify(found)))
+                this.isRequesting = false
+            }, latency)
+        })
     }
 
     saveContact(contact) {
-        this.isRequesting = true;
+        this.isRequesting = true
         return new Promise(resolve => {
             setTimeout(() => {
-                let instance = JSON.parse(JSON.stringify(contact));
-                let found = contacts.filter(x => x.id == contact.id)[0];
+                let instance = JSON.parse(JSON.stringify(contact))
+                let found = contacts.filter(x => x.id == contact.id)[0]
 
                 if (found) {
-                    let index = contacts.indexOf(found);
-                    contacts[index] = instance;
+                    let index = contacts.indexOf(found)
+                    contacts[index] = instance
                 } else {
-                    instance.id = getId();
-                    contacts.push(instance);
+                    instance.id = getId()
+                    contacts.push(instance)
                 }
 
-                this.isRequesting = false;
-                resolve(instance);
-            }, latency);
-        });
+                this.isRequesting = false
+                resolve(instance)
+            }, latency)
+        })
     }
 }

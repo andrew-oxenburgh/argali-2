@@ -1,11 +1,17 @@
 {
-  "extends": "./node_modules/aurelia-tools/.eslintrc.json",
-  "rules": {
-    "indent": ["error", 4],
-    "no-unused-vars": 0,
-    "eqeqeq": 0,
-    "no-shadow": 0,
-    "no-alert": 0,
-    "semi": 0
-  }
+    "extends": "./node_modules/aurelia-tools/.eslintrc.json",
+    "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "no-unused-vars": 0,
+        "eqeqeq": 0,
+        "no-shadow": 0,
+        "no-alert": 0,
+        "semi": [
+            "error",
+            "never"
+        ]
+    }
 }
