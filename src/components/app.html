@@ -8,9 +8,15 @@
             <a class="btn  ${page === 'report' ? 'btn-info' : 'button-default'}" href="#/report">Report <span class="sr-only">(current)</span></a>
         </div>
         <a class="navbar-brand" href="#">Argali</a>
-        <button class="nav-link" id="shifts-email" click.trigger="shiftsEmail()">Email</button>
-        <a class="nav-link" id="trello" target="_blank" href="https://trello.com/b/74zXOb6I/argali">Trello</a>
-        <button class="nav-link" id="shifts-clear" click.trigger="shiftsClear()">Clear</button>
+        <button class="nav-link" id="shifts-email" click.trigger="shiftsEmail()">
+            <i class="fa fa-envelope"></i>
+        </button>
+        <a class="nav-link" id="trello" target="_blank" href="https://trello.com/b/74zXOb6I/argali">
+            <i class="fa fa-trello"></i>
+        </a>
+        <button class="nav-link" id="shifts-clear" click.trigger="shiftsClear()">
+            <i class="fa fa-trash"></i>
+        </button>
 
     </nav>
     <router-view></router-view>

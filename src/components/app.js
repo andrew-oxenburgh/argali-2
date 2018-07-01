@@ -1,5 +1,6 @@
 import {PLATFORM} from 'aurelia-pal'
-import 'bootstrap/scss/bootstrap.scss'
+import 'font-awesome/css/font-awesome.css'
+// import 'bootstrap/dist/css/bootstrap.css'
 
 import '../styles.scss'
 import {EventAggregator} from 'aurelia-event-aggregator'

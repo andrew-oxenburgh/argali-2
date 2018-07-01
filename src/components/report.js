@@ -1,6 +1,4 @@
-import 'bootstrap/scss/bootstrap.scss'
 import {EventAggregator} from 'aurelia-event-aggregator'
-const $ = require('jquery')
 import {inject} from 'aurelia-framework'
 
 import {PageChanged} from '../messages'
