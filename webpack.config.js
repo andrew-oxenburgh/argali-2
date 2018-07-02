@@ -1,27 +1,27 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const project = require('./aurelia_project/aurelia.json');
-const { AureliaPlugin, ModuleDependenciesPlugin } = require('aurelia-webpack-plugin');
-const { ProvidePlugin } = require('webpack');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const project = require('./aurelia_project/aurelia.json')
+const { AureliaPlugin, ModuleDependenciesPlugin } = require('aurelia-webpack-plugin')
+const { ProvidePlugin } = require('webpack')
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 // config helpers:
-const ensureArray = (config) => config && (Array.isArray(config) ? config : [config]) || [];
+const ensureArray = (config) => config && (Array.isArray(config) ? config : [config]) || []
 const when = (condition, config, negativeConfig) =>
-    condition ? ensureArray(config) : ensureArray(negativeConfig);
+    condition ? ensureArray(config) : ensureArray(negativeConfig)
 
 // primary config:
-const title = 'Aurelia Navigation Skeleton';
-const outDir = path.resolve(__dirname, project.platform.output);
-const srcDir = path.resolve(__dirname, 'src');
-const nodeModulesDir = path.resolve(__dirname, 'node_modules');
-const baseUrl = '/';
+const title = 'Argali - Who\'s working?'
+const outDir = path.resolve(__dirname, project.platform.output)
+const srcDir = path.resolve(__dirname, 'src')
+const nodeModulesDir = path.resolve(__dirname, 'node_modules')
+const baseUrl = '/'
 
 const cssRules = [
     { loader: 'css-loader' }
-];
+]
 
 module.exports = ({production, server, extractCss, coverage, analyze} = {}) => ({
     resolve: {
@@ -109,4 +109,4 @@ module.exports = ({production, server, extractCss, coverage, analyze} = {}) => (
             { from: 'static/favicon.ico', to: 'favicon.ico' }])),
         ...when(analyze, new BundleAnalyzerPlugin())
     ]
-});
+})

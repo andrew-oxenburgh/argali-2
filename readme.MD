@@ -22,6 +22,10 @@ Click on a user to start work. Click on a user to stop work.
 
 There are 2 pages: Staff Page, and Report Page.
 
+### Aims:
+
+ - Don't use jQuery. It is not recommended to mix Shadow DOM frameworks and jQuery, so try to use it minimally.
+
 ### To do:
 
  - Tests 

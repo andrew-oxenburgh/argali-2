@@ -2,6 +2,7 @@ const {series, crossEnv, concurrent, rimraf} = require('nps-utils')
 
 module.exports = {
     scripts: {
+        lint: 'eslint --fix .',
         default: 'nps webpack',
         test: {
             default: 'nps test.jest',

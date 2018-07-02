@@ -124,8 +124,7 @@
   },
   "scripts": {
     "start": "nps",
-    "test": "nps test",
-    "lint": "eslint --fix src test"
+    "test": "nps test"
   },
   "main": "dist/app.bundle.js"
 }
