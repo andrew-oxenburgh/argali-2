@@ -15,6 +15,7 @@
     "bootstrap": "^4.1.1",
     "debug": "^3.1.0",
     "font-awesome": "^4.7.0",
+    "fontawesome": "^4.7.2",
     "jquery": "^3.3.1",
     "jquery-ui": "^1.12.1",
     "moment": "^2.22.2",
@@ -123,7 +124,8 @@
   },
   "scripts": {
     "start": "nps",
-    "test": "nps test"
+    "test": "nps test",
+    "lint": "eslint --fix src test"
   },
   "main": "dist/app.bundle.js"
 }

@@ -1,5 +1,5 @@
 import {PLATFORM} from 'aurelia-pal'
-import 'font-awesome/css/font-awesome.css'
+import 'fontawesome/'
 // import 'bootstrap/dist/css/bootstrap.css'
 
 import '../styles.scss'
