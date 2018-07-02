@@ -2,6 +2,10 @@
 
 A swipe in swipe out app.
 
+### Raison d'Etre
+
+Learning https://aurelia.io/
+
 
 ### Use Case
 
@@ -20,6 +24,7 @@ There are 2 pages: Staff Page, and Report Page.
 
 ### To do:
 
+ - Tests 
  - external persistence - currently it's just web `localStorage`
  - Authentication - possibly Googles `firebase`
  - actual drag and drop
