@@ -2,12 +2,12 @@ import {PLATFORM} from 'aurelia-pal'
 import 'fontawesome/'
 // import 'bootstrap/dist/css/bootstrap.css'
 
-import '../styles.scss'
+// import '../styles.scss'
 import {EventAggregator} from 'aurelia-event-aggregator'
 import {PageChanged} from '../messages'
 import {inject} from 'aurelia-framework'
 
-const shifts = require('../engine/shifts')
+const shifts = require('../engine/shifts')(localStorage)
 const shiftReports = require('../engine/shift-reports')
 
 
@@ -42,5 +42,6 @@ export class App {
 
     shiftsClear() {
         shifts.clear()
+        return 'done'
     }
 }

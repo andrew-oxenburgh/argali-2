@@ -5,7 +5,7 @@
  */
 const R = require('ramda')
 
-const shifts = require('./shifts')
+const shifts = require('./shifts')(localStorage)
 
 
 const asCsv = function() {

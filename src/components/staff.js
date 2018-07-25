@@ -6,7 +6,7 @@ import {inject} from 'aurelia-framework'
 import {PageChanged} from '../messages'
 
 import users from '../engine/users'
-import shifts from '../engine/shifts'
+const shifts = require('../engine/shifts')(localStorage)
 
 @inject(EventAggregator)
 export class Staff {

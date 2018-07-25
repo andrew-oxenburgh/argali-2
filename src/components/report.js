@@ -3,7 +3,7 @@ import {inject} from 'aurelia-framework'
 
 import {PageChanged} from '../messages'
 
-const shifts = require('../engine/shifts')
+const shifts = require('../engine/shifts')(localStorage)
 
 @inject(EventAggregator)
 export class Report {
