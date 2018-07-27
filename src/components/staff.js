@@ -5,8 +5,6 @@ import {inject} from 'aurelia-framework'
 
 import {PageChanged} from '../messages'
 
-import users from '../engine/users'
-
 import {EngineApi} from '../engine/engine-api'
 
 @inject(EventAggregator, EngineApi)
@@ -22,7 +20,7 @@ export class Staff {
     }
 
     calc() {
-        const staff = users.users()
+        const staff = this.api.users()
         this.working = keys(this.api.running())
         this.notWorking = difference(staff, this.working)
     }
