@@ -3,14 +3,14 @@ import {inject} from 'aurelia-framework'
 
 import {PageChanged} from '../messages'
 
-const shifts = require('../engine/shifts')(localStorage)
+import {EngineApi} from '../engine/engine-api'
 
-@inject(EventAggregator)
+@inject(EventAggregator, EngineApi)
 export class Report {
-    constructor(ea) {
+    constructor(ea, api) {
         this.ea = ea
 
-        this.shifts = shifts.completed()
+        this.shifts = api.completed()
         this.ea.publish(new PageChanged('report'))
     }
 }

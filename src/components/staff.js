@@ -6,12 +6,14 @@ import {inject} from 'aurelia-framework'
 import {PageChanged} from '../messages'
 
 import users from '../engine/users'
-const shifts = require('../engine/shifts')(localStorage)
 
-@inject(EventAggregator)
+import {EngineApi} from '../engine/engine-api'
+
+@inject(EventAggregator, EngineApi)
 export class Staff {
-    constructor(ea) {
+    constructor(ea, api) {
         this.ea = ea
+        this.api = api
         this.calc()
         this.ea.publish(new PageChanged('staff'))
     }
@@ -21,17 +23,17 @@ export class Staff {
 
     calc() {
         const staff = users.users()
-        this.working = keys(shifts.running())
+        this.working = keys(this.api.running())
         this.notWorking = difference(staff, this.working)
     }
 
     makeWorking(user) {
-        shifts.start({name: user, time: moment().format('YYYY-MM-DD HH:mm')})
+        this.api.start({name: user, time: moment().format('YYYY-MM-DD HH:mm')})
         this.calc()
     }
 
     makeNotWorking(user) {
-        shifts.end({name: user, time: moment().format('YYYY-MM-DD HH:mm')})
+        this.api.end({name: user, time: moment().format('YYYY-MM-DD HH:mm')})
         this.calc()
     }
 }

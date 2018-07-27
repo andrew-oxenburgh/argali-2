@@ -5,8 +5,8 @@
  */
 const R = require('ramda')
 
-const shifts = require('./shifts')(localStorage)
-
+let shifts
+let storage = []
 
 const asCsv = function() {
     const completed = shifts.completed()
@@ -31,7 +31,12 @@ const asHtml = function() {
 }
 
 
-module.exports = {
-    asHtml,
-    asCsv
+module.exports = (_storage) => {
+    storage = _storage
+    shifts = require('./shifts')(storage)
+
+    return {
+        asHtml,
+        asCsv
+    }
 }

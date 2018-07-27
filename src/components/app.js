@@ -7,14 +7,13 @@ import {EventAggregator} from 'aurelia-event-aggregator'
 import {PageChanged} from '../messages'
 import {inject} from 'aurelia-framework'
 
-const shifts = require('../engine/shifts')(localStorage)
-const shiftReports = require('../engine/shift-reports')
+import {EngineApi} from '../engine/engine-api'
 
-
-@inject(EventAggregator)
+@inject(EventAggregator, EngineApi)
 export class App {
-    constructor(ea) {
+    constructor(ea, api) {
         this.ea = ea
+        this.api = api
         ea.subscribe(PageChanged, msg => this.fixPageIndicator(msg.page))
     }
 
@@ -36,12 +35,12 @@ export class App {
     shiftsEmail() {
         const email = 'andrew.oxenburgh@gmail.com'
         const subject = 'roster'
-        const emailBody = encodeURI(shiftReports.asCsv())
+        const emailBody = encodeURI(this.api.asCsv())
         window.location = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody
     }
 
     shiftsClear() {
-        shifts.clear()
+        this.api.clear()
         return 'done'
     }
 }

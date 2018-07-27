@@ -20,7 +20,8 @@ module.exports = function(config) {
      * we are building the test environment in ./spec-bundle.js
      */
         files: [
-            { pattern: 'test/karma-bundle.js', watched: false }
+            'test/unit/*.spec.js'
+            // { pattern: 'test/unit/*.spec.js', watched: false }
         ],
 
         /*
@@ -28,10 +29,10 @@ module.exports = function(config) {
      * available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
      */
         preprocessors: {
-            'test/karma-bundle.js': [ 'webpack' ]
+            'test/unit/*.spec.js': [ 'webpack' ]
         },
 
-        webpack: require('../webpack.config')({ coverage: true }),
+        webpack: require('../webpack.config')({ production: false, coverage: false }),
 
         /*
      * test results reporter to use
